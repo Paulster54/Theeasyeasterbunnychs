@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 5 — Carousel Slide 2: The Solution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #A8D5BA, #C3AED6);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .logo {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 58px;
+            font-weight: 800;
+            color: #2D2D2D;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+        .steps .step {
+            background: rgba(255,255,255,0.6);
+            padding: 16px 40px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .step-num {
+            background: #5CB85C;
+            color: white;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Baloo 2', cursive;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .slide-indicator {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+        }
+        .dot.active {
+            background: #5CB85C;
+            width: 40px;
+            border-radius: 7px;
+        }
+
+        .swipe-text {
+            position: absolute;
+            bottom: 80px;
+            right: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(0,0,0,0.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo" class="logo">
+        <h1>Easter as Easy<br>as 1... 2... 3!</h1>
+
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div> Register your yard online</div>
+            <div class="step"><div class="step-num">2</div> We set up Easter Eve overnight</div>
+            <div class="step"><div class="step-num">3</div> Wake up to the magic!</div>
+        </div>
+
+        <div class="slide-indicator">
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <span class="swipe-text">Swipe &rarr;</span>
+    </div>
+</body>
+</html>

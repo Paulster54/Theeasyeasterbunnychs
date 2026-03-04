@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 6 — Carousel Slide 3: What You Get</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(150deg, #f0faf4, #ede5f5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        /* Decorative eggs */
+        .egg { position: absolute; opacity: 0.12; pointer-events: none; }
+        .e1 { top: 30px; left: 40px; font-size: 55px; transform: rotate(-15deg); }
+        .e2 { top: 50px; right: 60px; font-size: 45px; transform: rotate(20deg); }
+        .e3 { bottom: 100px; left: 60px; font-size: 50px; transform: rotate(10deg); }
+        .e4 { bottom: 80px; right: 50px; font-size: 40px; transform: rotate(-20deg); }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+
+        h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 52px;
+            font-weight: 800;
+            color: #2D2D2D;
+            margin-bottom: 36px;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+            z-index: 2;
+            max-width: 860px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #2D2D2D;
+            background: rgba(255,255,255,0.8);
+            padding: 20px 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .feature span:first-child { font-size: 38px; }
+
+        .packages-line {
+            margin-top: 36px;
+            font-size: 24px;
+            color: #2D2D2D;
+            opacity: 0.5;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .slide-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+        }
+        .dot.active {
+            background: #C3AED6;
+            width: 40px;
+            border-radius: 7px;
+        }
+
+        .swipe-text {
+            position: absolute;
+            bottom: 80px;
+            right: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <span class="egg e1">🥚</span>
+        <span class="egg e2">🐣</span>
+        <span class="egg e3">🌷</span>
+        <span class="egg e4">🐰</span>
+
+        <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo" class="logo">
+
+        <h2>Every Yard Receives:</h2>
+        <div class="features-grid">
+            <div class="feature"><span>🥚</span> Eggs filled with candy & prizes</div>
+            <div class="feature"><span>⭐</span> Golden egg for each child</div>
+            <div class="feature"><span>✉️</span> Personalized Bunny letter</div>
+            <div class="feature"><span>🪧</span> Easter Bunny yard stake</div>
+            <div class="feature"><span>🍬</span> Bonus candy bags</div>
+            <div class="feature"><span>💛</span> Life-long memories!</div>
+        </div>
+        <p class="packages-line">Packages from $45 to $125+</p>
+
+        <div class="slide-indicator">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+            <div class="dot"></div>
+        </div>
+        <span class="swipe-text">Swipe &rarr;</span>
+    </div>
+</body>
+</html>

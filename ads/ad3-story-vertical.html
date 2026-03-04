@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 3 — Instagram/Facebook Story Ad (9:16)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1920px;
+            background: linear-gradient(165deg, #A8D5BA 0%, #C3AED6 35%, #FFD6E0 65%, #FFF3B0 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px;
+        }
+
+        /* Scattered decorative elements */
+        .egg { position: absolute; opacity: 0.15; pointer-events: none; }
+        .e1 { top: 60px; left: 60px; font-size: 80px; transform: rotate(-20deg); }
+        .e2 { top: 100px; right: 80px; font-size: 60px; transform: rotate(15deg); }
+        .e3 { top: 300px; left: 140px; font-size: 50px; transform: rotate(25deg); }
+        .e4 { top: 500px; right: 60px; font-size: 70px; transform: rotate(-10deg); }
+        .e5 { bottom: 500px; left: 50px; font-size: 55px; transform: rotate(30deg); }
+        .e6 { bottom: 350px; right: 140px; font-size: 45px; transform: rotate(-25deg); }
+        .e7 { bottom: 200px; left: 120px; font-size: 65px; transform: rotate(5deg); }
+        .e8 { top: 700px; left: 60px; font-size: 40px; transform: rotate(20deg); }
+        .e9 { bottom: 600px; right: 50px; font-size: 50px; transform: rotate(-15deg); }
+
+        /* Top badge */
+        .top-badge {
+            background: rgba(255,255,255,0.85);
+            border-radius: 24px;
+            padding: 20px 36px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            z-index: 5;
+            margin-bottom: 60px;
+        }
+        .top-badge img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+        .top-badge .text {
+            font-family: 'Baloo 2', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+
+        /* Big logo */
+        .big-logo {
+            width: 280px;
+            height: 280px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.6);
+            border-radius: 40px;
+            padding: 30px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 84px;
+            font-weight: 800;
+            color: #2D2D2D;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            z-index: 2;
+        }
+        h1 span { color: #5CB85C; }
+
+        .subtitle {
+            font-size: 34px;
+            font-weight: 600;
+            color: #2D2D2D;
+            opacity: 0.65;
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 50px;
+            z-index: 2;
+        }
+        .feature {
+            background: rgba(255,255,255,0.65);
+            padding: 16px 36px;
+            border-radius: 16px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2D2D2D;
+        }
+
+        .cta-btn {
+            background: #5CB85C;
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-size: 40px;
+            font-weight: 700;
+            padding: 24px 70px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 30px rgba(92,184,92,0.5);
+            z-index: 2;
+        }
+
+        .price-line {
+            margin-top: 20px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #2D2D2D;
+            opacity: 0.55;
+            z-index: 2;
+        }
+        .price-line strong { color: #FF6B6B; opacity: 1; }
+
+        /* Swipe up hint */
+        .swipe-hint {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(0,0,0,0.3);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 5;
+        }
+        .swipe-hint::before {
+            content: '⌃';
+            display: block;
+            font-size: 30px;
+            margin-bottom: -4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <span class="egg e1">🥚</span>
+        <span class="egg e2">🐣</span>
+        <span class="egg e3">🌸</span>
+        <span class="egg e4">🐰</span>
+        <span class="egg e5">🌷</span>
+        <span class="egg e6">🥚</span>
+        <span class="egg e7">🐣</span>
+        <span class="egg e8">🌸</span>
+        <span class="egg e9">🌷</span>
+
+        <div class="top-badge">
+            <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo">
+            <span class="text">The Easy Easter Bunny</span>
+        </div>
+
+        <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo" class="big-logo">
+
+        <h1>Easter Made<br><span>Easy!</span></h1>
+        <p class="subtitle">We hide the eggs. You make the memories.</p>
+
+        <div class="features">
+            <div class="feature">🥚 Eggs filled with candy & prizes</div>
+            <div class="feature">⭐ Golden egg for each child</div>
+            <div class="feature">✉️ Personalized Bunny letter</div>
+        </div>
+
+        <button class="cta-btn">Reserve Your Yard 🐣</button>
+        <p class="price-line">Packages starting at <strong>$45</strong> | Charleston, SC</p>
+
+        <div style="position:absolute;bottom:120px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.7);color:white;padding:12px 28px;border-radius:12px;font-size:24px;font-weight:700;z-index:10;letter-spacing:1px;">🌐 theeasyeasterbunnychs.com</div>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;background:#FF6B6B;color:white;text-align:center;padding:16px;font-size:24px;font-weight:800;z-index:10;">⏰ SPOTS ARE LIMITED — REGISTER TODAY!</div>
+    </div>
+</body>
+</html>

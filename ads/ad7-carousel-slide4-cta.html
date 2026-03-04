@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 7 — Carousel Slide 4: CTA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #A8D5BA 0%, #C3AED6 50%, #FFD6E0 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .logo {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 30px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 62px;
+            font-weight: 800;
+            color: #2D2D2D;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        h1 span { color: #5CB85C; }
+
+        .subtitle {
+            font-size: 28px;
+            font-weight: 600;
+            color: #2D2D2D;
+            opacity: 0.6;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background: #5CB85C;
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-size: 38px;
+            font-weight: 700;
+            padding: 22px 64px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 30px rgba(92,184,92,0.4);
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .urgency {
+            font-size: 22px;
+            font-weight: 800;
+            color: #FF6B6B;
+            margin-bottom: 8px;
+        }
+
+        .location {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2D2D2D;
+            opacity: 0.45;
+        }
+
+        .slide-indicator {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+        }
+        .dot.active {
+            background: #5CB85C;
+            width: 40px;
+            border-radius: 7px;
+        }
+
+        /* Decorative */
+        .egg {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+        }
+        .e1 { top: 60px; left: 60px; transform: rotate(-20deg); }
+        .e2 { top: 80px; right: 70px; transform: rotate(15deg); }
+        .e3 { bottom: 100px; left: 80px; transform: rotate(10deg); }
+        .e4 { bottom: 120px; right: 60px; transform: rotate(-10deg); }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <div style="position:absolute;top:0;left:0;right:0;background:rgba(0,0,0,0.75);color:white;text-align:center;padding:14px;font-size:22px;font-weight:700;letter-spacing:1px;z-index:10;">🌐 <span style="color:#A8D5BA;">theeasyeasterbunnychs.com</span></div>
+
+        <span class="egg e1">🥚</span>
+        <span class="egg e2">🐣</span>
+        <span class="egg e3">🌷</span>
+        <span class="egg e4">🐰</span>
+
+        <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo" class="logo">
+        <h1>Don't Miss Out!<br><span>Reserve Today!</span></h1>
+        <p class="subtitle">Charleston's Favorite Easter Egg Hunt Delivery</p>
+        <button class="cta-btn">Reserve Your Yard 🐣</button>
+        <p class="urgency">Spots are limited — Register by March 22!</p>
+        <p class="location">📍 Serving Charleston, Mt. Pleasant, Summerville & more</p>
+
+        <div style="position:absolute;bottom:0;left:0;right:0;background:#FF6B6B;color:white;text-align:center;padding:14px;font-size:20px;font-weight:800;z-index:10;">⏰ EASTER IS APRIL 5 — DON'T WAIT!</div>
+
+        <div class="slide-indicator" style="bottom:60px;">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot active"></div>
+        </div>
+    </div>
+</body>
+</html>

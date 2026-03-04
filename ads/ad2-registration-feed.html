@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 2 — Registration / Conversion Feed Ad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1080px;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Top URL bar */
+        .url-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            text-align: center;
+            padding: 14px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+        .url-bar span { color: #A8D5BA; }
+
+        /* Top colored banner */
+        .top-banner {
+            height: 400px;
+            background: linear-gradient(135deg, #A8D5BA 0%, #C3AED6 50%, #FFD6E0 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 40px;
+        }
+
+        .egg { position: absolute; opacity: 0.18; pointer-events: none; }
+        .e1 { top: 60px; left: 40px; font-size: 45px; transform: rotate(-15deg); }
+        .e2 { top: 70px; right: 60px; font-size: 35px; transform: rotate(20deg); }
+        .e3 { bottom: 30px; left: 100px; font-size: 30px; transform: rotate(10deg); }
+        .e4 { bottom: 20px; right: 80px; font-size: 40px; transform: rotate(-20deg); }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.7);
+            border-radius: 24px;
+            padding: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            margin-bottom: 14px;
+            z-index: 2;
+        }
+
+        .top-banner h2 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 50px;
+            font-weight: 800;
+            color: #2D2D2D;
+            line-height: 1.1;
+            z-index: 2;
+        }
+        .top-banner h2 em {
+            font-style: normal;
+            color: #5CB85C;
+        }
+
+        /* Price badge */
+        .price-badge {
+            position: absolute;
+            top: 70px;
+            right: 30px;
+            background: #FF6B6B;
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-weight: 800;
+            font-size: 30px;
+            padding: 12px 24px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+            z-index: 5;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .price-badge .from { font-size: 15px; font-weight: 600; opacity: 0.9; }
+
+        /* Package cards */
+        .packages {
+            display: flex;
+            gap: 16px;
+            padding: 28px 36px;
+            justify-content: center;
+        }
+        .pkg {
+            flex: 1;
+            text-align: center;
+            background: #f9f9f9;
+            border-radius: 16px;
+            padding: 22px 14px;
+            border: 3px solid #eee;
+            transition: all 0.2s;
+        }
+        .pkg.popular {
+            border-color: #FF6B6B;
+            background: #fff5f5;
+            position: relative;
+            transform: scale(1.04);
+        }
+        .pkg.popular::before {
+            content: '🔥 MOST POPULAR';
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #FF6B6B;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            padding: 5px 16px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        .pkg-emoji { font-size: 38px; margin-bottom: 6px; }
+        .pkg-name { font-family: 'Baloo 2', cursive; font-size: 24px; font-weight: 700; color: #2D2D2D; }
+        .pkg-eggs { font-size: 16px; color: #2D2D2D; opacity: 0.5; font-weight: 700; margin: 4px 0; }
+        .pkg-price { font-family: 'Baloo 2', cursive; font-size: 36px; font-weight: 800; }
+        .pkg:nth-child(1) .pkg-price { color: #5CB85C; }
+        .pkg:nth-child(2) .pkg-price { color: #FF6B6B; }
+        .pkg:nth-child(3) .pkg-price { color: #9b59b6; }
+
+        /* Bottom content */
+        .bottom {
+            text-align: center;
+            padding: 0 50px 16px;
+        }
+
+        .cta-btn {
+            background: #5CB85C;
+            color: white;
+            font-family: 'Baloo 2', cursive;
+            font-size: 36px;
+            font-weight: 700;
+            padding: 18px 56px;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 30px rgba(92,184,92,0.4);
+            display: inline-block;
+        }
+
+        .deadline {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 800;
+            color: #FF6B6B;
+        }
+
+        /* Bottom urgency strip */
+        .urgency-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #FF6B6B;
+            color: white;
+            text-align: center;
+            padding: 14px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <div class="url-bar">🌐 <span>theeasyeasterbunnychs.com</span></div>
+
+        <div class="top-banner">
+            <span class="egg e1">🥚</span>
+            <span class="egg e2">🐣</span>
+            <span class="egg e3">🌷</span>
+            <span class="egg e4">🐰</span>
+
+            <div class="price-badge">
+                <div class="from">Starting at</div>
+                $45
+            </div>
+
+            <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="Logo" class="logo">
+            <h2>Easter Egg Hunt<br><em>Delivered to Your Yard!</em></h2>
+        </div>
+
+        <div class="packages">
+            <div class="pkg">
+                <div class="pkg-emoji">🐰</div>
+                <div class="pkg-name">Bunny Hop</div>
+                <div class="pkg-eggs">40 Eggs</div>
+                <div class="pkg-price">$45</div>
+            </div>
+            <div class="pkg popular">
+                <div class="pkg-emoji">🧺</div>
+                <div class="pkg-name">Golden Basket</div>
+                <div class="pkg-eggs">100 Eggs</div>
+                <div class="pkg-price">$65</div>
+            </div>
+            <div class="pkg">
+                <div class="pkg-emoji">👑</div>
+                <div class="pkg-name">Grand Hunt</div>
+                <div class="pkg-eggs">200 Eggs</div>
+                <div class="pkg-price">$125</div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <button class="cta-btn">Reserve Now — Easter 2026 🐣</button>
+            <p class="deadline">Register by March 22 to guarantee your spot!</p>
+        </div>
+
+        <div class="urgency-strip">📍 CHARLESTON, MT. PLEASANT, SUMMERVILLE & MORE — BOOK TODAY!</div>
+    </div>
+</body>
+</html>

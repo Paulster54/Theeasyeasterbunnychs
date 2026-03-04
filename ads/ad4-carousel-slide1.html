@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad 4 — Carousel Slide 1: The Problem</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: 'Nunito', sans-serif; }
+
+        .ad-frame {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #FFD6E0, #FFF3B0);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .emoji { font-size: 100px; margin-bottom: 30px; }
+
+        h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 64px;
+            font-weight: 800;
+            color: #2D2D2D;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 30px;
+            font-weight: 600;
+            color: #2D2D2D;
+            opacity: 0.6;
+            max-width: 700px;
+        }
+
+        .slide-indicator {
+            position: absolute;
+            bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+        }
+        .dot.active {
+            background: #FF6B6B;
+            width: 40px;
+            border-radius: 7px;
+        }
+
+        .swipe-text {
+            position: absolute;
+            bottom: 80px;
+            right: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-frame">
+        <div style="position:absolute;top:0;left:0;right:0;background:rgba(0,0,0,0.75);color:white;text-align:center;padding:14px;font-size:22px;font-weight:700;letter-spacing:1px;z-index:10;">🌐 <span style="color:#A8D5BA;">theeasyeasterbunnychs.com</span></div>
+
+        <div class="emoji">😫</div>
+        <h1>Tired of Hiding<br>Easter Eggs at<br>Midnight?</h1>
+        <p class="subtitle">There's a better way to give your kids an unforgettable Easter morning...</p>
+
+        <div class="slide-indicator">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <span class="swipe-text">Swipe &rarr;</span>
+    </div>
+</body>
+</html>

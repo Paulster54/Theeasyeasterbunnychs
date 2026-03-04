@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Easy Easter Bunny — Charleston SC | Easter Egg Hunt Delivered to Your Yard</title>
+    <meta name="description" content="Charleston's favorite Easter Egg Hunt delivery service! The Easy Easter Bunny transforms your yard overnight on Easter Eve. Reserve your spot for Easter 2026!">
+    <meta name="keywords" content="Easter egg hunt Charleston SC, Easter Bunny Charleston, Easter egg delivery, Easter activities Charleston, Easter events Mt Pleasant, Easter Summerville SC, Easter egg hunt near me, Easy Easter Bunny">
+    <meta property="og:title" content="The Easy Easter Bunny — Charleston SC">
+    <meta property="og:description" content="Wake up to an unforgettable Easter morning! The Easy Easter Bunny delivers a custom egg hunt to your yard overnight. Serving Charleston & the Lowcountry.">
+    <meta property="og:image" content="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png">
+    <meta property="og:url" content="https://theasyeastrbunnychs.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥚</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelGreen: '#A8D5BA',
+                        pastelPurple: '#C3AED6',
+                        pastelYellow: '#FFF3B0',
+                        pastelPink: '#FFD6E0',
+                        charcoal: '#2D2D2D',
+                        coral: '#FF6B6B',
+                        springGreen: '#5CB85C',
+                    },
+                    fontFamily: {
+                        heading: ['Baloo 2', 'cursive'],
+                        body: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { scroll-behavior: smooth; }
+        body { font-family: 'Nunito', sans-serif; color: #2D2D2D; }
+        h1, h2, h3, h4, h5 { font-family: 'Baloo 2', cursive; }
+
+        /* Decorative floating eggs */
+        .floating-egg {
+            position: absolute;
+            animation: floatEgg 6s ease-in-out infinite;
+            opacity: 0.15;
+            pointer-events: none;
+            font-size: 2rem;
+        }
+        @keyframes floatEgg {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Fade in on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Bounce bunny */
+        .bounce-bunny {
+            animation: bounceBunny 2s ease-in-out infinite;
+        }
+        @keyframes bounceBunny {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Countdown flip effect */
+        .countdown-box {
+            background: linear-gradient(135deg, #A8D5BA, #C3AED6);
+            border-radius: 12px;
+            min-width: 80px;
+        }
+
+        /* Ribbon for most popular */
+        .ribbon {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #FF6B6B;
+            color: white;
+            padding: 4px 16px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 0 8px 0 8px;
+            box-shadow: 0 2px 8px rgba(255,107,107,0.3);
+            z-index: 10;
+        }
+
+        /* FAQ accordion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-answer.open {
+            max-height: 500px;
+            padding-top: 0.75rem;
+        }
+
+        /* Gradient sections */
+        .section-green { background: linear-gradient(135deg, #f0faf4, #e8f5ee); }
+        .section-purple { background: linear-gradient(135deg, #f5f0fa, #ede5f5); }
+        .section-yellow { background: linear-gradient(135deg, #fffdf0, #fff8d6); }
+        .section-pink { background: linear-gradient(135deg, #fff0f3, #ffe8ed); }
+
+        /* Hero gradient */
+        .hero-bg {
+            background: linear-gradient(135deg, #A8D5BA 0%, #C3AED6 40%, #FFD6E0 70%, #FFF3B0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Payment card hover */
+        .payment-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        /* Package card hover */
+        .package-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .package-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+
+        /* Star rating */
+        .stars { color: #f0c040; }
+
+        /* Smooth scroll offset for fixed nav */
+        section[id] { scroll-margin-top: 80px; }
+
+        /* Mobile hamburger */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Gallery grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e8f5ee, #ede5f5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .gallery-item:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* Testimonial cards */
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid;
+            transition: transform 0.3s;
+        }
+        .testimonial-card:hover { transform: translateY(-4px); }
+
+        /* CTA pulse */
+        .cta-pulse {
+            animation: ctaPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes ctaPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(92,184,92,0.3); }
+            50% { box-shadow: 0 4px 32px rgba(92,184,92,0.6); }
+        }
+    </style>
+
+    <!-- Google Analytics placeholder -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script> -->
+    <!-- Meta Pixel placeholder -->
+    <!-- <script>!function(f,b,e,v,n,t,s)...</script> -->
+</head>
+<body class="bg-white">
+
+<!-- ========== NAVIGATION ========== -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="The Easy Easter Bunny Logo" class="h-12 md:h-14 w-auto">
+            </a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="#how-it-works" class="text-charcoal/70 hover:text-springGreen transition">How It Works</a>
+                <a href="#packages" class="text-charcoal/70 hover:text-springGreen transition">Packages</a>
+                <a href="#gallery" class="text-charcoal/70 hover:text-springGreen transition">Gallery</a>
+                <a href="#faq" class="text-charcoal/70 hover:text-springGreen transition">FAQ</a>
+                <a href="#contact" class="text-charcoal/70 hover:text-springGreen transition">Contact</a>
+                <a href="#register" class="bg-springGreen hover:bg-green-600 text-white px-5 py-2 rounded-full transition font-bold shadow-md">Reserve Now 🐣</a>
+            </div>
+
+            <!-- Mobile hamburger -->
+            <button id="mobileMenuBtn" class="md:hidden text-charcoal text-2xl focus:outline-none" aria-label="Menu">☰</button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl z-50 p-6 md:hidden">
+        <button id="mobileMenuClose" class="absolute top-4 right-4 text-2xl text-charcoal">✕</button>
+        <div class="mt-12 flex flex-col gap-5 text-lg font-semibold">
+            <a href="#how-it-works" class="nav-link text-charcoal/70 hover:text-springGreen transition">How It Works</a>
+            <a href="#packages" class="nav-link text-charcoal/70 hover:text-springGreen transition">Packages</a>
+            <a href="#gallery" class="nav-link text-charcoal/70 hover:text-springGreen transition">Gallery</a>
+            <a href="#faq" class="nav-link text-charcoal/70 hover:text-springGreen transition">FAQ</a>
+            <a href="#contact" class="nav-link text-charcoal/70 hover:text-springGreen transition">Contact</a>
+            <a href="#register" class="nav-link bg-springGreen text-white text-center py-3 rounded-full font-bold mt-4">Reserve Now 🐣</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero-bg min-h-[90vh] md:min-h-screen flex items-center justify-center relative pt-20">
+    <!-- Floating decorative eggs -->
+    <span class="floating-egg" style="top:10%;left:5%;animation-delay:0s;">🥚</span>
+    <span class="floating-egg" style="top:20%;right:8%;animation-delay:1s;font-size:1.5rem;">🐣</span>
+    <span class="floating-egg" style="bottom:25%;left:12%;animation-delay:2s;">🌸</span>
+    <span class="floating-egg" style="top:60%;right:15%;animation-delay:0.5s;font-size:2.5rem;">🥚</span>
+    <span class="floating-egg" style="bottom:15%;right:25%;animation-delay:3s;">🌷</span>
+    <span class="floating-egg" style="top:40%;left:20%;animation-delay:1.5s;font-size:1.8rem;">🐰</span>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <!-- Logo -->
+        <div class="mb-6">
+            <div class="inline-block bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg bounce-bunny">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="The Easy Easter Bunny" class="w-40 h-40 md:w-52 md:h-52 object-contain mx-auto">
+            </div>
+        </div>
+
+        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-charcoal leading-tight mb-4">
+            Charleston's Favorite Easter Egg Hunt —<br>
+            <span class="text-springGreen">Delivered to Your Yard!</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl font-heading font-semibold text-charcoal/80 mb-2">
+            Easter As Easy As 1...2...3...
+        </p>
+        <p class="text-lg text-charcoal/60 italic mb-8">
+            "The Largest Easter Experience in Your Yard!"
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="#register" class="cta-pulse bg-springGreen hover:bg-green-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition transform hover:scale-105">
+                🐣 Reserve Your Yard Now
+            </a>
+            <a href="#packages" class="bg-white/80 hover:bg-white text-charcoal font-bold text-lg px-8 py-4 rounded-full shadow-lg transition transform hover:scale-105 backdrop-blur-sm">
+                🎁 See Our Packages
+            </a>
+        </div>
+
+        <!-- Location badge -->
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-5 py-2.5 shadow-md text-sm font-semibold text-charcoal/80">
+            <span>📍</span>
+            Serving Charleston, Mt. Pleasant, Summerville, James Island, West Ashley &amp; surrounding areas
+        </div>
+    </div>
+
+    <!-- Wave divider -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+            <path d="M0 40C360 80 720 0 1080 40C1260 60 1380 60 1440 50V100H0V40Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+<!-- ========== HOW IT WORKS ========== -->
+<section id="how-it-works" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">How It Works</h2>
+            <p class="text-charcoal/60 text-lg">Easter as easy as 1...2...3!</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+            <!-- Step 1 -->
+            <div class="fade-in text-center group">
+                <div class="w-24 h-24 mx-auto mb-4 bg-pastelGreen/30 rounded-full flex items-center justify-center text-5xl group-hover:scale-110 transition-transform">
+                    📋
+                </div>
+                <div class="inline-block bg-springGreen text-white text-sm font-bold px-3 py-1 rounded-full mb-3">Step 1</div>
+                <h3 class="font-heading text-2xl font-bold mb-2">Register</h3>
+                <p class="text-charcoal/60">Register your home for a stop from the Easter Bunny. Choose your package and reserve your spot!</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="fade-in text-center group" style="transition-delay:0.15s">
+                <div class="w-24 h-24 mx-auto mb-4 bg-pastelPurple/30 rounded-full flex items-center justify-center text-5xl group-hover:scale-110 transition-transform">
+                    🌙
+                </div>
+                <div class="inline-block bg-pastelPurple text-charcoal text-sm font-bold px-3 py-1 rounded-full mb-3">Step 2</div>
+                <h3 class="font-heading text-2xl font-bold mb-2">Await</h3>
+                <p class="text-charcoal/60">Await the Easy Easter Bunny's visit on Easter Eve. The magic happens while you sleep!</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="fade-in text-center group" style="transition-delay:0.3s">
+                <div class="w-24 h-24 mx-auto mb-4 bg-pastelYellow/50 rounded-full flex items-center justify-center text-5xl group-hover:scale-110 transition-transform">
+                    🌅
+                </div>
+                <div class="inline-block bg-yellow-400 text-charcoal text-sm font-bold px-3 py-1 rounded-full mb-3">Step 3</div>
+                <h3 class="font-heading text-2xl font-bold mb-2">Wake Up!</h3>
+                <p class="text-charcoal/60">Wake up to an unforgettable Easter Morning! Watch the kids discover the magic in your own yard.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT / OUR SERVICE ========== -->
+<section id="about" class="py-16 md:py-24 section-green">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+                    The Easiest Easter<br>Your Family Will Ever Have 🐰
+                </h2>
+                <p class="text-lg text-charcoal/70 mb-6">
+                    The Easy Easter Bunny transforms your yard overnight on Easter Eve, leaving an unforgettable experience for the entire family on Easter Morning!
+                </p>
+                <p class="text-charcoal/60 mb-6 italic">
+                    The convenient and tailored solution of having The Easy Easter Bunny deliver your Easter Egg Hunt amid life's rush is sure to spark joy and create memorable experiences.
+                </p>
+                <a href="#register" class="inline-block bg-springGreen hover:bg-green-600 text-white font-bold px-6 py-3 rounded-full shadow-md transition">
+                    Reserve Your Yard &rarr;
+                </a>
+            </div>
+
+            <div class="fade-in" style="transition-delay:0.2s">
+                <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-5">
+                        🎁 Every Easy Easter Bunny Yard Receives:
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-0.5">🥚</span>
+                            <span class="text-charcoal/70"><strong class="text-charcoal">Plastic Easter Eggs</strong> filled with assorted candies and prizes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-0.5">⭐</span>
+                            <span class="text-charcoal/70"><strong class="text-charcoal">A Golden Egg</strong> for each child filled with a special keepsake</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-0.5">✉️</span>
+                            <span class="text-charcoal/70"><strong class="text-charcoal">A personalized letter</strong> from the Easter Bunny</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-0.5">🪧</span>
+                            <span class="text-charcoal/70"><strong class="text-charcoal">A special Easter Bunny yard stake</strong> that signifies the Easter Bunny's visit</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-2xl mt-0.5">💛</span>
+                            <span class="text-charcoal/70"><strong class="text-charcoal">Life-long memories</strong> on Easter morning!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PACKAGES & PRICING ========== -->
+<section id="packages" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">Choose Your Package 🎉</h2>
+            <p class="text-charcoal/60 text-lg">Something perfect for every family. Spots are limited!</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Bunny Hop -->
+            <div class="package-card fade-in bg-white rounded-2xl shadow-lg border-2 border-pastelGreen/30 p-6 relative flex flex-col">
+                <div class="text-center mb-4">
+                    <div class="text-4xl mb-2">🐰</div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal">Bunny Hop</h3>
+                    <p class="text-charcoal/50 text-sm">Basic Package</p>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="text-4xl font-heading font-extrabold text-springGreen">$45</span>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="inline-block bg-pastelGreen/30 text-charcoal font-bold px-3 py-1 rounded-full text-sm">40 Eggs</span>
+                </div>
+                <ul class="text-sm text-charcoal/60 space-y-2 mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><span class="text-springGreen">✓</span> Personalized letter</li>
+                    <li class="flex items-center gap-2"><span class="text-springGreen">✓</span> Golden egg per child</li>
+                    <li class="flex items-center gap-2"><span class="text-springGreen">✓</span> Easter Bunny yard stake</li>
+                </ul>
+                <a href="#register" class="block text-center bg-pastelGreen hover:bg-springGreen text-charcoal hover:text-white font-bold py-3 rounded-full transition">
+                    Reserve Now
+                </a>
+            </div>
+
+            <!-- Golden Basket (Most Popular) -->
+            <div class="package-card fade-in bg-white rounded-2xl shadow-xl border-2 border-coral/40 p-6 relative flex flex-col ring-2 ring-coral/20" style="transition-delay:0.1s">
+                <div class="ribbon">⭐ MOST POPULAR</div>
+                <div class="text-center mb-4">
+                    <div class="text-4xl mb-2">🧺</div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal">Golden Basket</h3>
+                    <p class="text-charcoal/50 text-sm">Most Popular</p>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="text-4xl font-heading font-extrabold text-coral">$65</span>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="inline-block bg-pastelPink text-charcoal font-bold px-3 py-1 rounded-full text-sm">100 Eggs</span>
+                </div>
+                <ul class="text-sm text-charcoal/60 space-y-2 mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><span class="text-coral">✓</span> Personalized letter</li>
+                    <li class="flex items-center gap-2"><span class="text-coral">✓</span> Golden egg per child</li>
+                    <li class="flex items-center gap-2"><span class="text-coral">✓</span> Easter Bunny yard stake</li>
+                    <li class="flex items-center gap-2"><span class="text-coral">✓</span> Bonus candy bags</li>
+                </ul>
+                <a href="#register" class="block text-center bg-coral hover:bg-red-500 text-white font-bold py-3 rounded-full transition shadow-md">
+                    Reserve Now ⭐
+                </a>
+            </div>
+
+            <!-- The Grand Hunt -->
+            <div class="package-card fade-in bg-white rounded-2xl shadow-lg border-2 border-pastelPurple/30 p-6 relative flex flex-col" style="transition-delay:0.2s">
+                <div class="text-center mb-4">
+                    <div class="text-4xl mb-2">👑</div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal">The Grand Hunt</h3>
+                    <p class="text-charcoal/50 text-sm">Premium Package</p>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="text-4xl font-heading font-extrabold text-purple-500">$125</span>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="inline-block bg-pastelPurple/40 text-charcoal font-bold px-3 py-1 rounded-full text-sm">200 Eggs</span>
+                </div>
+                <ul class="text-sm text-charcoal/60 space-y-2 mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Personalized letter</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Golden egg per child</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Easter Bunny yard stake</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Bonus candy bags</li>
+                    <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Plush bunny</li>
+                </ul>
+                <a href="#register" class="block text-center bg-pastelPurple hover:bg-purple-400 text-charcoal hover:text-white font-bold py-3 rounded-full transition">
+                    Reserve Now
+                </a>
+            </div>
+
+            <!-- Custom Hunt -->
+            <div class="package-card fade-in bg-white rounded-2xl shadow-lg border-2 border-pastelYellow/50 p-6 relative flex flex-col" style="transition-delay:0.3s">
+                <div class="text-center mb-4">
+                    <div class="text-4xl mb-2">🎨</div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal">Custom Hunt</h3>
+                    <p class="text-charcoal/50 text-sm">Build Your Own</p>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="text-2xl font-heading font-extrabold text-yellow-600">Contact Us</span>
+                </div>
+                <div class="text-center mb-4">
+                    <span class="inline-block bg-pastelYellow text-charcoal font-bold px-3 py-1 rounded-full text-sm">Custom Eggs</span>
+                </div>
+                <ul class="text-sm text-charcoal/60 space-y-2 mb-6 flex-grow">
+                    <li class="flex items-center gap-2"><span class="text-yellow-600">✓</span> Large families</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-600">✓</span> Neighborhood parties</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-600">✓</span> Church events</li>
+                    <li class="flex items-center gap-2"><span class="text-yellow-600">✓</span> Custom everything</li>
+                </ul>
+                <a href="#contact" class="block text-center bg-pastelYellow hover:bg-yellow-300 text-charcoal font-bold py-3 rounded-full transition">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== COUNTDOWN TIMER ========== -->
+<section class="py-12 md:py-16 section-purple relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 text-center fade-in">
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-charcoal mb-2">
+            🐣 Countdown to Easter 2026!
+        </h2>
+        <p class="text-charcoal/60 mb-8">The Easy Easter Bunny is coming to Charleston!</p>
+
+        <div class="flex justify-center gap-3 sm:gap-5 flex-wrap" id="countdown">
+            <div class="countdown-box text-center px-4 py-4 shadow-lg">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white" id="cd-days">00</div>
+                <div class="text-xs sm:text-sm font-semibold text-white/80 uppercase tracking-wider">Days</div>
+            </div>
+            <div class="countdown-box text-center px-4 py-4 shadow-lg">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white" id="cd-hours">00</div>
+                <div class="text-xs sm:text-sm font-semibold text-white/80 uppercase tracking-wider">Hours</div>
+            </div>
+            <div class="countdown-box text-center px-4 py-4 shadow-lg">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white" id="cd-mins">00</div>
+                <div class="text-xs sm:text-sm font-semibold text-white/80 uppercase tracking-wider">Minutes</div>
+            </div>
+            <div class="countdown-box text-center px-4 py-4 shadow-lg">
+                <div class="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white" id="cd-secs">00</div>
+                <div class="text-xs sm:text-sm font-semibold text-white/80 uppercase tracking-wider">Seconds</div>
+            </div>
+        </div>
+
+        <p class="mt-6 text-charcoal/50 text-sm">Easter Sunday — April 5, 2026</p>
+    </div>
+</section>
+
+<!-- ========== PHOTO GALLERY ========== -->
+<section id="gallery" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">Easter Morning Magic 📸</h2>
+            <p class="text-charcoal/60 text-lg">Memories from past Easter mornings — your family could be next!</p>
+        </div>
+
+        <div class="gallery-grid fade-in">
+            <!-- Photo 1: Easter egg hunt scene on lawn -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/1222.png" alt="Easter Egg Hunt on the lawn - colorful eggs scattered in the grass" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 2: Girl with Easter basket and eggs -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/IMG_9160.jpeg" alt="Happy girl holding Easter egg with basket of colorful eggs" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 3: Girl searching for eggs near bushes -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/6E9D174E-CDB6-418E-8AB4-860326E89EB6.png" alt="Girl finding Easter eggs near the bushes" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 4: Easter morning fun -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/E3.jpg" alt="Easter morning excitement - kids collecting eggs" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 5: Easy Easter Bunny visit -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB%20pic.jpeg" alt="The Easy Easter Bunny yard setup" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 6 -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/IMG_5027.jpg" alt="Family Easter egg hunt morning" class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <!-- Photo 7 -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/IMG_5028.PNG" alt="Kids enjoying their Easter egg hunt" class="w-full h-full object-cover" loading="lazy">
+            </div>
+        </div>
+        <p class="text-center text-charcoal/40 text-sm mt-6 italic">Real photos from Easy Easter Bunny families — 2021 to 2025</p>
+    </div>
+</section>
+
+<!-- ========== CHARLESTON LOCAL ========== -->
+<section class="py-16 md:py-24 section-green relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+                🌴 Bringing Easter Magic to the Lowcountry
+            </h2>
+            <p class="text-lg text-charcoal/70 max-w-2xl mx-auto mb-8">
+                The Easy Easter Bunny is proud to serve families across the Charleston metro area. From Daniel Island to Folly Beach, we bring the Easter magic right to your doorstep!
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Charleston</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Mt. Pleasant</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Summerville</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 James Island</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 West Ashley</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Daniel Island</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Goose Creek</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 North Charleston</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Isle of Palms</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Sullivan's Island</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Folly Beach</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Johns Island</span>
+                <span class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-charcoal/70 shadow-sm">📍 Kiawah Island</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== REGISTRATION / SIGN-UP ========== -->
+<section id="register" class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-10 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">
+                🐣 Reserve Your Yard for Easter 2026!
+            </h2>
+            <p class="text-charcoal/60 text-lg">Spots are limited — register today to guarantee your Easter morning magic!</p>
+        </div>
+
+        <div class="fade-in bg-gradient-to-br from-pastelGreen/10 to-pastelPurple/10 rounded-3xl p-6 md:p-10 shadow-lg border border-pastelGreen/20">
+            <!-- Order Form -->
+            <form id="orderForm" class="bg-white rounded-2xl p-6 md:p-8 space-y-6">
+
+                <!-- Parent / Guardian Info -->
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-4 flex items-center gap-2">👤 Parent / Guardian Info</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Full Name <span class="text-coral">*</span></label>
+                            <input type="text" name="parentName" required placeholder="Jane Smith" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Email <span class="text-coral">*</span></label>
+                            <input type="email" name="email" required placeholder="jane@email.com" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Phone Number <span class="text-coral">*</span></label>
+                            <input type="tel" name="phone" required placeholder="(843) 555-1234" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">How did you hear about us?</label>
+                            <select name="referral" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal bg-white focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                                <option value="">Select...</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Friend/Family">Friend / Family</option>
+                                <option value="Nextdoor">Nextdoor</option>
+                                <option value="Google">Google Search</option>
+                                <option value="Flyer">Flyer / Sign</option>
+                                <option value="Returning Customer">Returning Customer</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-4 flex items-center gap-2">📍 Delivery Address</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="sm:col-span-2">
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Street Address <span class="text-coral">*</span></label>
+                            <input type="text" name="street" required placeholder="123 Magnolia Lane" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">City <span class="text-coral">*</span></label>
+                            <input type="text" name="city" required placeholder="Charleston" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-charcoal/70 mb-1">State <span class="text-coral">*</span></label>
+                                <input type="text" name="state" required value="SC" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-charcoal/70 mb-1">Zip <span class="text-coral">*</span></label>
+                                <input type="text" name="zip" required placeholder="29401" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Selection -->
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-4 flex items-center gap-2">🎁 Package Selection</h3>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <label class="flex items-center gap-3 border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-springGreen/50 transition has-[:checked]:border-springGreen has-[:checked]:bg-pastelGreen/10">
+                            <input type="radio" name="package" value="Bunny Hop - $45" required class="w-5 h-5 accent-springGreen">
+                            <div>
+                                <span class="font-bold text-charcoal">🐰 Bunny Hop</span>
+                                <span class="block text-sm text-charcoal/50">40 Eggs — $45</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 border-2 border-coral/30 rounded-xl p-4 cursor-pointer hover:border-coral/60 transition has-[:checked]:border-coral has-[:checked]:bg-pastelPink/10 relative">
+                            <span class="absolute -top-2 -right-2 bg-coral text-white text-xs font-bold px-2 py-0.5 rounded-full">POPULAR</span>
+                            <input type="radio" name="package" value="Golden Basket - $65" class="w-5 h-5 accent-coral">
+                            <div>
+                                <span class="font-bold text-charcoal">🧺 Golden Basket</span>
+                                <span class="block text-sm text-charcoal/50">100 Eggs — $65</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-purple-400/50 transition has-[:checked]:border-purple-500 has-[:checked]:bg-pastelPurple/10">
+                            <input type="radio" name="package" value="Grand Hunt - $125" class="w-5 h-5 accent-purple-500">
+                            <div>
+                                <span class="font-bold text-charcoal">👑 The Grand Hunt</span>
+                                <span class="block text-sm text-charcoal/50">200 Eggs — $125</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 border-2 border-gray-200 rounded-xl p-4 cursor-pointer hover:border-yellow-400/50 transition has-[:checked]:border-yellow-500 has-[:checked]:bg-pastelYellow/20">
+                            <input type="radio" name="package" value="Custom Hunt" class="w-5 h-5 accent-yellow-500">
+                            <div>
+                                <span class="font-bold text-charcoal">🎨 Custom Hunt</span>
+                                <span class="block text-sm text-charcoal/50">Contact for pricing</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Children Info -->
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-4 flex items-center gap-2">👧 Children Info</h3>
+                    <div class="grid sm:grid-cols-3 gap-4 mb-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Number of Children <span class="text-coral">*</span></label>
+                            <input type="number" name="numChildren" required min="1" max="20" placeholder="2" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Children's Names <span class="text-coral">*</span></label>
+                            <input type="text" name="childrenNames" required placeholder="Emma, Liam" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Children's Ages</label>
+                            <input type="text" name="childrenAges" placeholder="5, 3" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-charcoal/70 mb-1">⚠️ Allergy Information</label>
+                        <input type="text" name="allergies" placeholder="Peanut allergy, no chocolate, etc. (leave blank if none)" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                    </div>
+                </div>
+
+                <!-- Preferences -->
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-charcoal mb-4 flex items-center gap-2">🌿 Preferences</h3>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Preferred Egg Hiding Location</label>
+                            <select name="hidingLocation" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal bg-white focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                                <option value="Front Yard">Front Yard</option>
+                                <option value="Back Yard">Back Yard</option>
+                                <option value="Both">Both (Front & Back)</option>
+                                <option value="Other">Other (see notes)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-charcoal/70 mb-1">Preferred Payment Method <span class="text-coral">*</span></label>
+                            <select name="paymentMethod" required class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal bg-white focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition">
+                                <option value="">Select...</option>
+                                <option value="Zelle">Zelle</option>
+                                <option value="Venmo">Venmo</option>
+                                <option value="Cash">Cash</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <label class="block text-sm font-semibold text-charcoal/70 mb-1">Special Instructions / Notes</label>
+                        <textarea name="notes" rows="3" placeholder="Gate code, dog in yard, specific hiding spots, etc." class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-charcoal focus:outline-none focus:ring-2 focus:ring-springGreen/50 focus:border-springGreen transition resize-y"></textarea>
+                    </div>
+                </div>
+
+                <!-- Confirmations -->
+                <div class="space-y-3 bg-pastelYellow/20 rounded-xl p-5">
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" name="dateConfirm" required class="w-5 h-5 mt-0.5 accent-springGreen">
+                        <span class="text-sm text-charcoal/70">I confirm the Easter Bunny will visit on <strong class="text-charcoal">Easter Eve (Saturday, April 4, 2026)</strong> and the egg hunt will be ready by <strong class="text-charcoal">Easter Morning (April 5, 2026)</strong>. <span class="text-coral">*</span></span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer">
+                        <input type="checkbox" name="consent" required class="w-5 h-5 mt-0.5 accent-springGreen">
+                        <span class="text-sm text-charcoal/70">I agree to the terms of service and understand that payment is due at time of registration to secure my spot. <span class="text-coral">*</span></span>
+                    </label>
+                </div>
+
+                <!-- Submit -->
+                <div class="text-center pt-2">
+                    <button type="submit" id="submitBtn" class="cta-pulse bg-springGreen hover:bg-green-600 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none">
+                        🐣 Submit Registration
+                    </button>
+                </div>
+
+                <!-- Status Messages -->
+                <div id="formStatus" class="text-center text-sm font-semibold hidden"></div>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="formSuccess" class="hidden bg-white rounded-2xl p-8 text-center">
+                <div class="text-6xl mb-4">🎉</div>
+                <h3 class="font-heading text-2xl font-bold text-springGreen mb-2">Registration Complete!</h3>
+                <p class="text-charcoal/60 mb-4">
+                    Thank you for registering with The Easy Easter Bunny! We've received your order and will be in touch within 24 hours.
+                </p>
+                <div class="bg-pastelGreen/20 rounded-xl p-4 text-sm text-charcoal/70 mb-4">
+                    <strong class="text-charcoal">Next Steps:</strong><br>
+                    1. Send payment via your selected method (see <a href="#payment" class="text-springGreen font-semibold hover:underline">Payment section</a>)<br>
+                    2. Include your <strong>last name + package name</strong> in the memo<br>
+                    3. Watch for a confirmation email!
+                </div>
+                <button onclick="document.getElementById('formSuccess').classList.add('hidden');document.getElementById('orderForm').classList.remove('hidden');document.getElementById('orderForm').reset();" class="text-springGreen font-semibold hover:underline text-sm">
+                    Submit another registration
+                </button>
+            </div>
+
+            <p class="text-center text-charcoal/50 text-sm mt-4">
+                ✉️ You'll receive a confirmation email within 24 hours of registration.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PAYMENT SECTION ========== -->
+<section id="payment" class="py-16 md:py-24 section-yellow">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">💰 Payment Options</h2>
+            <p class="text-charcoal/60 text-lg">Payment is due at time of registration to reserve your spot. Spots are limited!</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <!-- Zelle -->
+            <div class="payment-card fade-in bg-white rounded-2xl shadow-lg p-6 text-center transition-all duration-300 border-t-4 border-purple-600">
+                <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl font-bold text-purple-600">Z</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-charcoal mb-2">Zelle</h3>
+                <p class="text-charcoal/60 text-sm mb-3">Use your bank's Zelle feature to send payment</p>
+                <div class="bg-purple-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm font-semibold text-purple-700">Send to:</p>
+                    <p class="font-bold text-charcoal">Paul@venturecarolinas.com</p>
+                </div>
+                <!-- QR Code placeholder -->
+                <div class="w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <span class="text-xs text-gray-400 text-center px-2">[ZELLE QR CODE IMAGE]</span>
+                </div>
+            </div>
+
+            <!-- Venmo -->
+            <div class="payment-card fade-in bg-white rounded-2xl shadow-lg p-6 text-center transition-all duration-300 border-t-4 border-blue-500" style="transition-delay:0.1s">
+                <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl font-bold text-blue-500">V</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-charcoal mb-2">Venmo</h3>
+                <p class="text-charcoal/60 text-sm mb-3">Scan the QR code or search our username in Venmo</p>
+                <div class="bg-blue-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm font-semibold text-blue-600">Send to:</p>
+                    <p class="font-bold text-charcoal">@Paulster54</p>
+                </div>
+                <!-- QR Code placeholder -->
+                <div class="w-32 h-32 mx-auto bg-gray-100 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <span class="text-xs text-gray-400 text-center px-2">[VENMO QR CODE IMAGE]</span>
+                </div>
+            </div>
+
+            <!-- Cash -->
+            <div class="payment-card fade-in bg-white rounded-2xl shadow-lg p-6 text-center transition-all duration-300 border-t-4 border-springGreen" style="transition-delay:0.2s">
+                <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="text-3xl">💵</span>
+                </div>
+                <h3 class="font-heading text-xl font-bold text-charcoal mb-2">Cash</h3>
+                <p class="text-charcoal/60 text-sm mb-3">Cash payments accepted at time of delivery or by arrangement</p>
+                <div class="bg-green-50 rounded-lg p-3 mb-4">
+                    <p class="text-sm font-semibold text-green-700">Contact us to arrange</p>
+                    <p class="font-bold text-charcoal">cash payment</p>
+                </div>
+                <div class="w-32 h-32 mx-auto flex items-center justify-center">
+                    <span class="text-5xl">💰</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment memo note -->
+        <div class="fade-in bg-white rounded-2xl shadow-md p-5 text-center border-l-4 border-coral max-w-2xl mx-auto">
+            <p class="font-bold text-charcoal">⚠️ Important:</p>
+            <p class="text-charcoal/70">Please include your <strong>LAST NAME</strong> and <strong>PACKAGE NAME</strong> in the payment memo</p>
+            <p class="text-sm text-charcoal/50 mt-1 italic">Example: "Thompson - Golden Basket"</p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">What Families Are Saying 💬</h2>
+            <p class="text-charcoal/60 text-lg">Don't just take our word for it!</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="testimonial-card fade-in" style="border-color: #A8D5BA;">
+                <div class="stars text-xl mb-3">★★★★★</div>
+                <p class="text-charcoal/70 italic mb-4">
+                    "The kids were SCREAMING with excitement Easter morning! Best decision we ever made. The golden eggs were the highlight!"
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-pastelGreen rounded-full flex items-center justify-center text-lg">🏡</div>
+                    <div>
+                        <p class="font-bold text-charcoal text-sm">The Johnson Family</p>
+                        <p class="text-charcoal/50 text-xs">Mt. Pleasant, SC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in" style="border-color: #C3AED6; transition-delay:0.1s;">
+                <div class="stars text-xl mb-3">★★★★★</div>
+                <p class="text-charcoal/70 italic mb-4">
+                    "So much easier than doing it ourselves. The personalized letters made our kids feel so special. We'll definitely be back!"
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-pastelPurple rounded-full flex items-center justify-center text-lg">🌸</div>
+                    <div>
+                        <p class="font-bold text-charcoal text-sm">Sarah M.</p>
+                        <p class="text-charcoal/50 text-xs">James Island, SC</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in" style="border-color: #FFD6E0; transition-delay:0.2s;">
+                <div class="stars text-xl mb-3">★★★★★</div>
+                <p class="text-charcoal/70 italic mb-4">
+                    "We've done this 3 years in a row now. It's become our Easter tradition! The kids start counting down in February."
+                </p>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-pastelPink rounded-full flex items-center justify-center text-lg">🌷</div>
+                    <div>
+                        <p class="font-bold text-charcoal text-sm">The Williams Family</p>
+                        <p class="text-charcoal/50 text-xs">Summerville, SC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FAQ SECTION ========== -->
+<section id="faq" class="py-16 md:py-24 section-pink">
+    <div class="max-w-3xl mx-auto px-4">
+        <div class="text-center mb-12 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">Frequently Asked Questions 🤔</h2>
+        </div>
+
+        <div class="space-y-3 fade-in">
+            <!-- FAQ 1 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>🗓️ When does the Easter Bunny visit?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    The Easy Easter Bunny visits your yard overnight on Easter Eve (Saturday night, April 4th). Your family will wake up to a fully set up Easter Egg Hunt on Easter morning, April 5th, 2026!
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>📍 What areas do you serve?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    We serve the greater Charleston, SC metro area including Mt. Pleasant, Summerville, James Island, West Ashley, Daniel Island, Goose Creek, North Charleston, and surrounding communities.
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>🌧️ What if it rains?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    We monitor weather closely! If severe weather is expected, we'll communicate a plan with you in advance. Light rain doesn't stop the Easter Bunny!
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>⚠️ Are the candies allergy-friendly?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    We use a variety of name-brand candies. If your child has allergies, please note them during registration and we'll accommodate as best we can.
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>🎨 Can I add extra eggs or customize my package?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    Absolutely! Choose "Custom Hunt" when registering or contact us directly to discuss your needs. We're happy to create the perfect experience for your family.
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>💳 How do I pay?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    We accept Zelle, Venmo, or Cash. Payment is due at time of registration to secure your spot. See the <a href="#payment" class="text-springGreen font-semibold hover:underline">Payment section</a> for details.
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item bg-white rounded-xl shadow-sm overflow-hidden">
+                <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-charcoal hover:text-springGreen transition">
+                    <span>⏰ Is there a deadline to register?</span>
+                    <span class="faq-icon text-xl transition-transform duration-300">+</span>
+                </button>
+                <div class="faq-answer px-6 pb-4 text-charcoal/60">
+                    Spots are limited and fill up fast! We recommend registering by <strong>March 22, 2026</strong> to guarantee your spot. Late registrations accepted based on availability.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact" class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-10 fade-in">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-3">Questions? Reach Out! 💌</h2>
+            <p class="text-charcoal/60 text-lg">We'd love to hear from you!</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto fade-in">
+            <!-- Paul Thompson -->
+            <div class="bg-gradient-to-br from-pastelGreen/20 to-pastelGreen/5 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-3">🐰</div>
+                <h3 class="font-heading font-bold text-xl text-charcoal mb-1">Paul Thompson</h3>
+                <a href="tel:7044534847" class="text-springGreen font-semibold hover:underline text-sm block mt-2">📞 (704) 453-4847</a>
+                <a href="mailto:Paul@venturecarolinas.com" class="text-springGreen font-semibold hover:underline text-sm block mt-1 break-all">✉️ Paul@venturecarolinas.com</a>
+            </div>
+
+            <!-- Noah Nelson -->
+            <div class="bg-gradient-to-br from-pastelPurple/20 to-pastelPurple/5 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-3">🐣</div>
+                <h3 class="font-heading font-bold text-xl text-charcoal mb-1">Noah Nelson</h3>
+                <a href="tel:4078215775" class="text-purple-500 font-semibold hover:underline text-sm block mt-2">📞 (407) 821-5775</a>
+                <a href="mailto:nelsonnoah2121@gmail.com" class="text-purple-500 font-semibold hover:underline text-sm block mt-1 break-all">✉️ nelsonnoah2121@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="flex justify-center gap-4 mt-8 fade-in">
+            <a href="[FACEBOOK URL]" target="_blank" class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition font-bold text-sm" aria-label="Facebook">f</a>
+            <a href="https://instagram.com/TheEasyEasterBunny" target="_blank" class="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-600 text-white rounded-full flex items-center justify-center hover:opacity-90 transition" aria-label="Instagram">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+        </div>
+        <p class="text-charcoal/50 text-sm mt-2 text-center">DM us on Instagram <span class="font-semibold">@TheEasyEasterBunny</span></p>
+    </div>
+</section>
+
+<!-- ========== FINAL CTA BANNER ========== -->
+<section class="py-12 md:py-16 hero-bg relative">
+    <div class="relative z-10 max-w-3xl mx-auto px-4 text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-4">
+            Don't Miss Out! 🐰 Reserve Your Easter Morning Today!
+        </h2>
+        <p class="text-charcoal/60 mb-6 text-lg">Spots fill up fast — secure your family's magical Easter experience now.</p>
+        <a href="#register" class="cta-pulse inline-block bg-springGreen hover:bg-green-600 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition transform hover:scale-105">
+            🐣 Reserve Your Yard Now
+        </a>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-charcoal text-white py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <!-- Brand -->
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <img src="https://img1.wsimg.com/isteam/ip/b6ba9a0d-1cda-404e-b4f6-a4c6836ca4c5/EEB2.png" alt="The Easy Easter Bunny Logo" class="w-12 h-12 object-contain">
+                    <span class="font-heading font-bold text-xl">The Easy Easter Bunny</span>
+                </div>
+                <p class="text-white/50 text-sm">Serving Charleston, SC &amp; the Lowcountry</p>
+                <p class="text-white/40 text-xs mt-3 italic leading-relaxed">
+                    Our mission is to transform ordinary moments into extraordinary memories. We are dedicated to bringing joy, wonder, and the magic of Easter to families' doorsteps.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-4">Quick Links</h4>
+                <div class="space-y-2 text-sm">
+                    <a href="#how-it-works" class="block text-white/60 hover:text-pastelGreen transition">How It Works</a>
+                    <a href="#packages" class="block text-white/60 hover:text-pastelGreen transition">Packages</a>
+                    <a href="#register" class="block text-white/60 hover:text-pastelGreen transition">Register</a>
+                    <a href="#payment" class="block text-white/60 hover:text-pastelGreen transition">Payment</a>
+                    <a href="#faq" class="block text-white/60 hover:text-pastelGreen transition">FAQ</a>
+                    <a href="#contact" class="block text-white/60 hover:text-pastelGreen transition">Contact</a>
+                </div>
+            </div>
+
+            <!-- Contact Footer -->
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-4">Contact Us</h4>
+                <div class="space-y-3 text-sm text-white/60">
+                    <div>
+                        <p class="text-white/80 font-semibold">Paul Thompson</p>
+                        <p>📞 (704) 453-4847</p>
+                        <p>✉️ Paul@venturecarolinas.com</p>
+                    </div>
+                    <div>
+                        <p class="text-white/80 font-semibold">Noah Nelson</p>
+                        <p>📞 (407) 821-5775</p>
+                        <p>✉️ nelsonnoah2121@gmail.com</p>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-4">
+                    <a href="[FACEBOOK URL]" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition text-sm font-bold" aria-label="Facebook">f</a>
+                    <a href="https://instagram.com/TheEasyEasterBunny" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition" aria-label="Instagram">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
+            <p>&copy; 2026 The Easy Easter Bunny — All Rights Reserved</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white/60 transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white/60 transition">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+// ==========================================
+// COUNTDOWN TIMER — Easter 2026: April 5
+// ==========================================
+function updateCountdown() {
+    const easter = new Date('2026-04-05T06:00:00-04:00'); // Easter morning 6am EDT
+    const now = new Date();
+    const diff = easter - now;
+
+    if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '🐣';
+        document.getElementById('cd-hours').textContent = 'Happy';
+        document.getElementById('cd-mins').textContent = 'Easter';
+        document.getElementById('cd-secs').textContent = '!';
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+mobileMenuClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// Close on backdrop click
+document.addEventListener('click', (e) => {
+    if (mobileMenu.classList.contains('open') && !mobileMenu.contains(e.target) && e.target !== mobileMenuBtn) {
+        mobileMenu.classList.remove('open');
+    }
+});
+
+// ==========================================
+// FAQ ACCORDION
+// ==========================================
+document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('.faq-icon');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-icon').forEach(i => {
+            i.textContent = '+';
+            i.style.transform = 'rotate(0deg)';
+        });
+
+        if (!isOpen) {
+            answer.classList.add('open');
+            icon.textContent = '−';
+            icon.style.transform = 'rotate(180deg)';
+        }
+    });
+});
+
+// ==========================================
+// SCROLL ANIMATIONS (Intersection Observer)
+// ==========================================
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
+let lastScroll = 0;
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 100) {
+        navbar.classList.add('shadow-md');
+    } else {
+        navbar.classList.remove('shadow-md');
+    }
+
+    lastScroll = scrollY;
+});
+
+// ==========================================
+// SMOOTH SCROLL for anchor links
+// ==========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// ==========================================
+// ORDER FORM SUBMISSION → Google Sheets
+// ==========================================
+// PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW:
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwe1f5ewy16Jbr8NphNNVQfO8oqYsH0ONwJp0BPNpF7MCHZMXrFO2wVRWy3pzlQj9M/exec';
+
+const orderForm = document.getElementById('orderForm');
+const submitBtn = document.getElementById('submitBtn');
+const formStatus = document.getElementById('formStatus');
+const formSuccess = document.getElementById('formSuccess');
+
+orderForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Validate
+    if (!orderForm.checkValidity()) {
+        orderForm.reportValidity();
+        return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Submitting...';
+    formStatus.classList.remove('hidden');
+    formStatus.className = 'text-center text-sm font-semibold text-charcoal/50';
+    formStatus.textContent = 'Sending your registration...';
+
+    // Collect form data
+    const formData = new FormData(orderForm);
+    const data = {};
+    formData.forEach((value, key) => { data[key] = value; });
+
+    // Add timestamp
+    data.timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+
+    // Handle checkboxes (they only appear if checked)
+    data.dateConfirm = formData.has('dateConfirm') ? 'Yes' : 'No';
+    data.consent = formData.has('consent') ? 'Yes' : 'No';
+
+    try {
+        // Send as form-encoded data (works with no-cors + Google Apps Script)
+        const params = new URLSearchParams();
+        for (const key in data) {
+            params.append(key, data[key]);
+        }
+
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: params
+        });
+
+        orderForm.classList.add('hidden');
+        formStatus.classList.add('hidden');
+        formSuccess.classList.remove('hidden');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    } catch (error) {
+        formStatus.className = 'text-center text-sm font-semibold text-coral';
+        formStatus.textContent = 'Something went wrong. Please try again or contact us directly at Paul@venturecarolinas.com';
+        console.error('Form submission error:', error);
+    }
+
+    // Reset button
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '🐣 Submit Registration';
+});
+</script>
+
+</body>
+</html>

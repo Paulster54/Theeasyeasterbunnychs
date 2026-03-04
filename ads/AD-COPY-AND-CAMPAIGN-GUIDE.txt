@@ -1,0 +1,258 @@
+=====================================================
+  THE EASY EASTER BUNNY — FACEBOOK & INSTAGRAM ADS
+  Ad Copy + Campaign Setup Guide
+=====================================================
+
+WEBSITE: theeasyeasterbunnychs.com
+LINK TO USE IN ALL ADS: https://theeasyeasterbunnychs.com#register
+
+
+=====================================================
+  AD IMAGES — HOW TO USE
+=====================================================
+
+Open each HTML file in your browser, then:
+  - On PC: Press Ctrl+Shift+S to "Save As" > choose PNG/JPG
+  - OR: Use the Snipping Tool (Win+Shift+S) to screenshot
+  - OR: Right-click > Print > Save as PDF
+
+Files created:
+  ad1-awareness-feed.html      — 1080x1080 Feed ad (awareness)
+  ad2-registration-feed.html   — 1080x1080 Feed ad (registration/conversion)
+  ad3-story-vertical.html      — 1080x1920 Story/Reel ad (vertical)
+  ad4-carousel-slide1.html     — Carousel Slide 1: "Tired of hiding eggs?"
+  ad5-carousel-slide2.html     — Carousel Slide 2: "Easy as 1-2-3"
+  ad6-carousel-slide3.html     — Carousel Slide 3: "What you get"
+  ad7-carousel-slide4-cta.html — Carousel Slide 4: "Reserve today"
+
+
+=====================================================
+  AD #1 — AWARENESS (Feed Post)
+  Use with: ad1-awareness-feed.html
+=====================================================
+
+PRIMARY TEXT:
+Easter morning is about to get a whole lot easier 🐣
+
+The Easy Easter Bunny delivers a custom Easter Egg Hunt to YOUR yard overnight — so you wake up to pure magic.
+
+🥚 Eggs filled with candy & prizes
+⭐ Golden egg for each child
+✉️ Personalized letter from the Easter Bunny
+🪧 Easter Bunny yard stake
+
+Serving Charleston, Mt. Pleasant, Summerville, James Island & more!
+
+Packages start at just $45. Spots are LIMITED — don't wait!
+
+HEADLINE: Easter Egg Hunt — Delivered to Your Yard!
+DESCRIPTION: We set up overnight. You enjoy the magic. Packages from $45.
+CTA BUTTON: Sign Up
+
+
+=====================================================
+  AD #2 — REGISTRATION / CONVERSION (Feed Post)
+  Use with: ad2-registration-feed.html
+=====================================================
+
+PRIMARY TEXT:
+Imagine this: You wake up Easter morning. Your kids run outside. Your yard is FILLED with colorful Easter eggs 🥚✨
+
+No late-night hiding. No last-minute shopping. Just pure magic.
+
+The Easy Easter Bunny does it ALL — we come to your yard Easter Eve and set up an unforgettable Easter Egg Hunt while you sleep!
+
+🐰 Bunny Hop — 40 eggs — $45
+🧺 Golden Basket — 100 eggs — $65 (MOST POPULAR)
+👑 Grand Hunt — 200 eggs — $125
+
+📍 Charleston, SC area only. Spots fill up FAST!
+
+Register now before your date is taken!
+
+HEADLINE: Reserve Your Yard — Easter 2026
+DESCRIPTION: Starting at $45. We set it up overnight. Register before spots sell out!
+CTA BUTTON: Sign Up
+
+
+=====================================================
+  AD #3 — STORY / REEL AD (Vertical 9:16)
+  Use with: ad3-story-vertical.html
+=====================================================
+
+TEXT OVERLAY (already on the image):
+  "Easter Made Easy!"
+  "We hide the eggs. You make the memories."
+  "Reserve Your Yard 🐣"
+  "Packages starting at $45 | Charleston, SC"
+
+CAPTION (if posting as Reel):
+The easiest Easter your family will ever have 🐰🥚 We deliver a full Easter Egg Hunt to your yard overnight! Charleston, SC area. Link in bio!
+
+#EasterEggHunt #CharlestonSC #EasterBunny #TheEasyEasterBunny #Easter2026 #CharlestonMom #MtPleasantSC #SummervilleSC #CharlestonKids #EasterMorning
+
+
+=====================================================
+  AD #4 — CAROUSEL AD (4 Slides)
+  Use with: ad4 through ad7 HTML files
+=====================================================
+
+PRIMARY TEXT:
+Tired of hiding Easter eggs at midnight? 😫
+
+There's a MUCH better way...
+
+The Easy Easter Bunny delivers a complete Easter Egg Hunt to your yard OVERNIGHT! 🐣
+
+👉 Swipe to see how it works!
+
+Packages from $45. Serving Charleston, SC area.
+Spots are LIMITED — register today!
+
+HEADLINE: The Easiest Easter You'll Ever Have
+DESCRIPTION: We set up your yard Easter Eve. Starting at $45!
+CTA BUTTON: Sign Up
+
+
+=====================================================
+  AD #5 — TESTIMONIAL / SOCIAL PROOF AD
+  (Use Picture7.jpg or Picture9.jpg as image)
+=====================================================
+
+PRIMARY TEXT:
+"The kids were SCREAMING with excitement Easter morning!" ⭐⭐⭐⭐⭐
+
+Join hundreds of Charleston families who let The Easy Easter Bunny handle Easter morning.
+
+Here's what you get:
+🥚 Eggs filled with candy & prizes
+⭐ A golden egg for each child
+✉️ A personalized letter from the Easter Bunny
+🪧 A special yard stake marking the visit
+
+No stress. No late nights. Just magic ✨
+
+Register now — spots are LIMITED!
+
+HEADLINE: 5-Star Easter Mornings — Starting at $45
+DESCRIPTION: Join Charleston families who trust The Easy Easter Bunny!
+CTA BUTTON: Sign Up
+
+
+=====================================================
+  AD #6 — URGENCY / LAST CALL AD
+  (Use closer to March deadline)
+=====================================================
+
+PRIMARY TEXT:
+⏰ TIME IS RUNNING OUT!
+
+Easter is April 5th and spots are filling up FAST.
+
+If you want The Easy Easter Bunny to visit YOUR yard this Easter, you need to register NOW.
+
+🐰 Bunny Hop (40 eggs) — $45
+🧺 Golden Basket (100 eggs) — $65
+👑 Grand Hunt (200 eggs) — $125
+
+Don't let your kids miss out on the magic! 🐣
+
+📍 Charleston, Mt. Pleasant, Summerville & surrounding areas
+
+HEADLINE: Last Chance — Register Before It's Too Late!
+DESCRIPTION: Easter 2026 spots almost gone. Don't miss out!
+CTA BUTTON: Sign Up
+
+
+=====================================================
+  HASHTAGS (use on organic posts & Reels)
+=====================================================
+
+#TheEasyEasterBunny #EasterEggHunt #CharlestonSC #Easter2026
+#CharlestonMom #CharlestonDad #MtPleasantSC #SummervilleSC
+#JamesIslandSC #WestAshley #DanielIsland #GooseCreekSC
+#CharlestonKids #EasterMorning #EasterBunny #EasterEggs
+#CharlestonFamily #LowcountryLiving #CharlestonEvents
+#EasterActivities #KidsActivitiesCharleston
+
+
+=====================================================
+  FACEBOOK/INSTAGRAM TARGETING RECOMMENDATIONS
+=====================================================
+
+CAMPAIGN 1: AWARENESS
+  Objective: Reach / Brand Awareness
+  Budget: $10-15/day
+  Duration: Start NOW, run through March 22
+
+  Targeting:
+  - Location: 25-mile radius around Charleston, SC
+  - Age: 25-45
+  - Gender: All (but women will likely convert more)
+  - Interests:
+    * Parenting
+    * Motherhood
+    * Easter
+    * Family activities
+    * Kids activities
+    * Charleston SC community groups
+  - Behaviors:
+    * Parents with children ages 0-12
+
+  Placements: Facebook Feed, Instagram Feed, Instagram Stories
+
+  Ads to use: Ad #1 (Awareness), Ad #3 (Story)
+
+
+CAMPAIGN 2: REGISTRATION / CONVERSION
+  Objective: Conversions (or Traffic if pixel not set up)
+  Budget: $15-25/day
+  Duration: Start 2 weeks after awareness, run through March 28
+
+  Targeting: Same as above, PLUS:
+  - Custom Audience: Retarget website visitors
+  - Lookalike Audience: Based on form submissions
+
+  Placements: Facebook Feed, Instagram Feed, Instagram Stories
+
+  Ads to use: Ad #2 (Registration), Ad #4 (Carousel)
+
+
+CAMPAIGN 3: URGENCY / LAST CALL
+  Objective: Conversions
+  Budget: $20-30/day
+  Duration: March 15 — April 2 (last push)
+
+  Targeting:
+  - Retarget: People who visited site but didn't register
+  - Same interest targeting as above
+
+  Ads to use: Ad #5 (Testimonial), Ad #6 (Urgency)
+
+
+=====================================================
+  TOTAL SUGGESTED AD BUDGET
+=====================================================
+
+  Awareness (4 weeks):    $10/day x 28 = $280
+  Registration (3 weeks): $20/day x 21 = $420
+  Urgency (2.5 weeks):    $25/day x 18 = $450
+
+  TOTAL: ~$1,150 for the full campaign
+
+  MINIMUM viable budget: $500-600
+  (Run awareness + registration only, $10-15/day)
+
+
+=====================================================
+  QUICK START CHECKLIST
+=====================================================
+
+  [ ] Create Facebook Business Page (if you don't have one)
+  [ ] Set up Meta Business Suite (business.facebook.com)
+  [ ] Install Meta Pixel on your website (for tracking)
+  [ ] Create ad images from the HTML files (screenshot them)
+  [ ] Set up Campaign 1 (Awareness) — start ASAP
+  [ ] Set up Campaign 2 (Registration) — start 1-2 weeks later
+  [ ] Set up Campaign 3 (Urgency) — start mid-March
+  [ ] Monitor daily and adjust budget to best performers
