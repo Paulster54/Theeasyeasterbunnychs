@@ -1289,14 +1289,27 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
 }
 
 async function geocodeAddress(street, city, state, zip) {
-    const query = encodeURIComponent(`${street}, ${city}, ${state} ${zip}`);
-    const url = `https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1&countrycodes=us`;
-    const response = await fetch(url, {
-        headers: { 'User-Agent': 'TheEasyEasterBunny-OrderForm/1.0' }
-    });
-    const results = await response.json();
-    if (results && results.length > 0) {
-        return { lat: parseFloat(results[0].lat), lng: parseFloat(results[0].lon) };
+    // Try multiple query formats — Nominatim often fails on full street addresses
+    // but reliably finds city+state (which is accurate enough for a 35-mile radius check)
+    const queries = [
+        `${street}, ${city}, ${state} ${zip}`,   // Full address
+        `${city}, ${state} ${zip}`,               // City + State + Zip
+        `${city}, ${state}`                        // City + State only
+    ];
+
+    for (const q of queries) {
+        try {
+            const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=1&countrycodes=us`;
+            const response = await fetch(url, {
+                headers: { 'User-Agent': 'TheEasyEasterBunny-OrderForm/1.0' }
+            });
+            const results = await response.json();
+            if (results && results.length > 0) {
+                return { lat: parseFloat(results[0].lat), lng: parseFloat(results[0].lon) };
+            }
+        } catch (err) {
+            console.warn('Geocode attempt failed for:', q, err);
+        }
     }
     return null;
 }
