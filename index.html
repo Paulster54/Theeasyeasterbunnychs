@@ -1270,6 +1270,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BELOW:
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_C9QbSR27ghxm5D6H-ds9PvB0WjwoyBDXP-0yOWSUMeG7mdLvNRWxa_Is6LQsS4PB/exec';
 
+// ==========================================
+// SERVICE AREA CHECK — 35 mile radius
+// ==========================================
+const BASE_LAT = 32.7354;
+const BASE_LNG = -79.9553;
+const MAX_MILES = 35;
+
+function haversineDistance(lat1, lon1, lat2, lon2) {
+    const R = 3958.8; // Earth radius in miles
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+              Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+async function geocodeAddress(street, city, state, zip) {
+    const query = encodeURIComponent(`${street}, ${city}, ${state} ${zip}`);
+    const url = `https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1&countrycodes=us`;
+    const response = await fetch(url, {
+        headers: { 'User-Agent': 'TheEasyEasterBunny-OrderForm/1.0' }
+    });
+    const results = await response.json();
+    if (results && results.length > 0) {
+        return { lat: parseFloat(results[0].lat), lng: parseFloat(results[0].lon) };
+    }
+    return null;
+}
+
 const orderForm = document.getElementById('orderForm');
 const submitBtn = document.getElementById('submitBtn');
 const formStatus = document.getElementById('formStatus');
@@ -1286,15 +1317,43 @@ orderForm.addEventListener('submit', async function(e) {
 
     // Show loading state
     submitBtn.disabled = true;
-    submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Submitting...';
+    submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Checking service area...';
     formStatus.classList.remove('hidden');
     formStatus.className = 'text-center text-sm font-semibold text-charcoal/50';
-    formStatus.textContent = 'Sending your registration...';
+    formStatus.textContent = 'Verifying your delivery address...';
 
     // Collect form data
     const formData = new FormData(orderForm);
     const data = {};
     formData.forEach((value, key) => { data[key] = value; });
+
+    // ---- SERVICE AREA CHECK ----
+    try {
+        const coords = await geocodeAddress(
+            data.street || '',
+            data.city || '',
+            data.state || '',
+            data.zip || ''
+        );
+
+        if (coords) {
+            const distance = haversineDistance(BASE_LAT, BASE_LNG, coords.lat, coords.lng);
+            if (distance > MAX_MILES) {
+                formStatus.className = 'text-center text-sm font-semibold text-coral';
+                formStatus.innerHTML = '🚫 Sorry! Your address is about ' + Math.round(distance) + ' miles away. We currently only deliver within ' + MAX_MILES + ' miles of Charleston. Contact us at <a href="mailto:Paul@venturecarolinas.com" class="underline">Paul@venturecarolinas.com</a> for special arrangements!';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '🐣 Submit Registration';
+                return;
+            }
+        }
+        // If geocoding fails, allow the order through (don't block real customers)
+    } catch (geoError) {
+        console.warn('Geocoding check skipped:', geoError);
+    }
+
+    // ---- PASSED — continue with submission ----
+    submitBtn.innerHTML = '<span class="inline-block animate-spin mr-2">⏳</span> Submitting...';
+    formStatus.textContent = 'Sending your registration...';
 
     // Add timestamp
     data.timestamp = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
